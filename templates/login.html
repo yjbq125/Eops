@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="UTF-8">
+	<title>Admin系统</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/login.css"/>
+    </head>
+    <body>
+	<div id="logindiv">
+            <div class="content-warp">
+                <p class="title">代码发布</p>
+                <form action="" method="post">
+                    <div class="inputgroup">
+                        <span class="sp1">账号</span>
+                            <input name="username" type="username" placeholder="请输入账号"/>
+                    </div>
+                    <div class="inputgroup">
+                        <span class="sp1">密码</span>
+                            <input name="password" type="password" placeholder="请输入密码"/>
+                    </div>
+                            <input type="button"  id="loginbutton" value="登 录" />
+                {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
