@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>发布日志</title>
+  <link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css"/>  
+  <link rel="stylesheet" type="text/css" href="../static/css/staticstyle.css"/>
+  </head>
+  
+  <body>
+		<div class="warpper">
+				<div class="layui-row">
+					<form class="layui-form">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">Project</label>
+					    <div class="layui-input-block">
+					      <select name="city" lay-verify="required">
+					        <option value=""></option>
+					        <option value="0">Please choose Project</option>
+					        <option value="1">apple</option>
+					        <option value="2">pineapple</option>
+					        <option value="3">Pear</option>
+					      </select>
+					    </div>
+					  </div>
+					  <div class="layui-form-item layui-form-text">
+					    <label class="layui-form-label">CDN</label>
+					    <div class="layui-input-block">
+					      <textarea name="desc" placeholder="Please enter the content" class="layui-textarea"></textarea>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <div class="layui-input-block">
+					      <a href="javascript:history.back(-1)" class="layui-btn layui-btn-primary">返回</a>
+					    </div>
+					  </div>
+					</form>
+				</div>
+		</div>
+	
+	
+	
+		<script src="../static/js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			layui.use(['form', 'laydate', 'element', 'table'], function(){
+        var form = layui.form //获得layer模块
+        ,element=layui.element
+        ,table=layui.table
+        ,laydate = layui.laydate; //获得laydate模块
+	
+	    });
+		</script>
+  </body>
+</html>
