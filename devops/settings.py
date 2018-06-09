@@ -36,9 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'release',
+    'release'
 ]
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "release.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'eops',
         'USER': 'eops',
         'PASSWORD': 'eops',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': 3306,
     }
 }
