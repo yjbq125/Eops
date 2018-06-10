@@ -9,7 +9,7 @@
 	<div id="logindiv">
             <div class="content-warp">
                 <p class="title">代码发布</p>
-                <form action="" method="post">
+                <form action="/" method="post">
                     <div class="inputgroup">
                         <span class="sp1">账号</span>
                             <input name="username" type="username" placeholder="请输入账号"/>
@@ -18,7 +18,7 @@
                         <span class="sp1">密码</span>
                             <input name="password" type="password" placeholder="请输入密码"/>
                     </div>
-                            <input type="button"  id="loginbutton" value="登 录" />
+                            <input type="submit"  id="loginbutton" value="登 录" />
                 {% csrf_token %}
                 </form>
             </div>

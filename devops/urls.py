@@ -16,10 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from release.views import LoginView
+from release.views import LoginView,AdminExamineView,ModifyPasswordView,ReleaseListView,RechargeView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', LoginView.as_view(), name="login")
+    url(r'^$', LoginView.as_view(), name="login"),
+    url(r'^examine/', AdminExamineView.as_view(), name='examine'),
+    url(r'^home/', ReleaseListView.as_view(), name='release_list'),
+    url(r'^password/', ModifyPasswordView.as_view(), name='modify_password'),
+    url(r'^recharge/', RechargeView.as_view(), name='racharge')
 ]

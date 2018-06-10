@@ -8,30 +8,19 @@ import uuid
 class User(AbstractUser):
     ROLE_ADMIN = 'Admin'
     ROLE_USER = 'User'
-    ROLE_APP = 'App'
 
     ROLE_CHOICES = (
         (ROLE_ADMIN, 'Administrator'),
         (ROLE_USER, 'User'),
-        (ROLE_APP, 'Application')
     )
-
-    username = models.CharField(
-        max_length=128, unique=True, verbose_name='Username'
-    )
+    username = models.CharField(max_length=128, unique=True, verbose_name='Username')
     role = models.CharField(
         choices=ROLE_CHOICES, default='User', max_length=10,
         blank=True, verbose_name='Role'
     )
-    wechat = models.CharField(
-        max_length=128, blank=True, verbose_name='Wechat'
-    )
-    phone = models.CharField(
-        max_length=20, blank=True, null=True, verbose_name='Phone'
-    )
-    email = models.EmailField(
-        max_length=128, unique=True, verbose_name='Email'
-    )
+    wechat = models.CharField(max_length=128, verbose_name='Wechat')
+    phone = models.CharField(max_length=20, blank=True, null=True, verbose_name='Phone')
+    email = models.EmailField(max_length=128, verbose_name='Email')
 
     class Meta:
         ordering = ['username']
