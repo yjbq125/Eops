@@ -1,39 +1,40 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import uuid
 
 
 # Create your models here.
-class UserProfile(AbstractUser):
+class User(AbstractUser):
     ROLE_ADMIN = 'Admin'
     ROLE_USER = 'User'
     ROLE_APP = 'App'
 
     ROLE_CHOICES = (
-        (ROLE_ADMIN, _('Administrator')),
-        (ROLE_USER, _('User')),
-        (ROLE_APP, _('Application'))
+        (ROLE_ADMIN, 'Administrator'),
+        (ROLE_USER, 'User'),
+        (ROLE_APP, 'Application')
     )
 
     username = models.CharField(
-        max_length=128, unique=True, verbose_name=_('Username')
+        max_length=128, unique=True, verbose_name='Username'
     )
     role = models.CharField(
         choices=ROLE_CHOICES, default='User', max_length=10,
-        blank=True, verbose_name=_('Role')
+        blank=True, verbose_name='Role'
     )
     wechat = models.CharField(
-        max_length=128, blank=True, verbose_name=_('Wechat')
+        max_length=128, blank=True, verbose_name='Wechat'
     )
     phone = models.CharField(
-        max_length=20, blank=True, null=True, verbose_name=_('Phone')
+        max_length=20, blank=True, null=True, verbose_name='Phone'
     )
     email = models.EmailField(
-        max_length=128, unique=True, verbose_name=_('Email')
+        max_length=128, unique=True, verbose_name='Email'
     )
 
     class Meta:
         ordering = ['username']
-        verbose_name = _("User")
+        verbose_name = "User"
 
     def __str__(self):
         return self.username
@@ -52,29 +53,20 @@ class UserProfile(AbstractUser):
         else:
             self.role = 'User'
 
-
 class ReleaseList(models.Model):
     RELEASE_STATUS = (
-        ('0x001', 'waiting'),
-        ('0x002', 'success'),
-        ('0x003', 'failure')
+        ('0x01', 'waiting'),
+        ('0x02', 'success'),
+        ('0x03', 'failure')
     )
-
     id = models.UUIDField(default=uuid.uuid4, primary_key=True)
     project =  models.CharField(max_length=50, verbose_name='project_name')
     modules = models.CharField(max_length=500, verbose_name='modeule_name')
-    start_time = models.DateTimeField(auto_now_add=True, verbose_name=_('Start time'))
-    release_time = models.DateTimeField(auto_now_add=True, verbose_name=_('Release time'))
-    release_status = models.CharField(choices=ROLE_CHOICES, max_length=10, verbose_name=_('Status'))
-    comment = models.TextField(verbose_name=_('Comment'), blank=True)
-
-
-
-
-
-
-
-
-
-
-
+    start_time = models.DateTimeField(auto_now_add=True, verbose_name='Start time')
+    release_time = models.DateTimeField(auto_now_add=True, verbose_name='Release time')
+    release_status = models.CharField(choices=RELEASE_STATUS, max_length=10, verbose_name='Status')
+    comment = models.TextField(verbose_name='Comment', blank=True)
+         
+    class Meta:
+        ordering = ['id']
+        verbose_name = "User"
