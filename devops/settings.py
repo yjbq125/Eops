@@ -25,7 +25,7 @@ SECRET_KEY = '5g5wpus!ue*9$(fb^8xd5r1%^)=%j(+u0%5$@3z_3=7)%of#rd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.3.197', '192.168.254.101']
+ALLOWED_HOSTS = ['192.168.3.197', '192.168.254.101', '127.0.0.1']
 
 # Application definition
 
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'eops',
         'USER': 'eops',
         'PASSWORD': 'eops',
-        'HOST': '127.0.0.1',
+        'HOST': '192.168.254.101',
         'PORT': 3306,
     }
 }

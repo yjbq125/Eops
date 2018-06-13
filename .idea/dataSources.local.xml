@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - eops@192.168.254.101" uuid="1338550a-0578-4d2d-9a89-f2fdbcf5ccf1">
+      <database-info product="MySQL" version="5.5.56-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>memory</secret-storage>
+      <user-name>eops</user-name>
+      <introspection-scope>eops:</introspection-scope>
+      <resolve-scope>eops:</resolve-scope>
+    </data-source>
+  </component>
+</project>

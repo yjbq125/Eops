@@ -8,7 +8,7 @@ from .forms import LoginForm
 # Create your views here.
 class LoginView(View):
     def get(self, request):
-        return render(request, "release-list.html", {})
+        return render(request, "user-add.html", {})
 
     def post(sefl, request):
         user_name = request.POST.get("username", "")
