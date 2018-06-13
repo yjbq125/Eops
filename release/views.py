@@ -8,15 +8,13 @@ from .forms import LoginForm
 # Create your views here.
 class LoginView(View):
     def get(self, request):
-        return render(request, "user.html", {})
+        return render(request, "release-list.html", {})
 
     def post(sefl, request):
-        #login_form = LoginForm(request.POST)
         user_name = request.POST.get("username", "")
         pass_word = request.POST.get("password", "")
         user = authenticate(username=user_name, password=pass_word)
         if user is not None:
-            #if User.objects.get()
             login(request, user)
             return render(request, "admin.html", {})
         else:

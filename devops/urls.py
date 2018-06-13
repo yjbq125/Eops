@@ -20,7 +20,7 @@ from release.views import LoginView,AdminExamineView,ModifyPasswordView,ReleaseL
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+#    url(r'^admin/', admin.site.urls),
     url(r'^$', LoginView.as_view(), name="login"),
     url(r'^examine/', AdminExamineView.as_view(), name='examine'),
     url(r'^home/', ReleaseListView.as_view(), name='release_list'),
